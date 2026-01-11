@@ -34,9 +34,18 @@ const Signup = () => {
     const { error } = await signUp(email, password, displayName);
 
     if (error) {
+      // Check for missing environment variables error
+      const isConfigError = 
+        error.message.includes('Invalid API key') ||
+        error.message.includes('Invalid URL') ||
+        error.message.includes('fetch failed') ||
+        error.message.includes('Failed to fetch');
+      
       toast({
         title: 'Signup failed',
-        description: error.message,
+        description: isConfigError
+          ? 'Supabase configuration error. Please check your .env.local file has VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY set correctly.'
+          : error.message,
         variant: 'destructive',
       });
       setLoading(false);
