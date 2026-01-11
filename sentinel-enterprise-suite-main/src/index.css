@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 18% 8%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 220 14% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 16% 55%;
+
+    --accent: 200 80% 50%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 98%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 220 20% 6%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 20% 6%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.5rem;
+
+    /* Custom Sentinel tokens */
+    --sentinel-glow-primary: 160 84% 39%;
+    --sentinel-glow-destructive: 0 72% 51%;
+    --sentinel-glow-accent: 200 80% 50%;
+    --sentinel-surface: 220 18% 8%;
+    --sentinel-surface-elevated: 220 16% 12%;
+    --sentinel-grid: 220 14% 15%;
+
+    --sidebar-background: 220 18% 7%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 14% 14%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 160 84% 39%;
+  }
+
+  .light {
+    --background: 210 20% 98%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 160 84% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 92%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 220 14% 94%;
+    --muted-foreground: 215 16% 45%;
+
+    --accent: 200 80% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 160 84% 32%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 45%;
+    --warning-foreground: 220 20% 10%;
+
+    --border: 220 14% 85%;
+    --input: 220 14% 85%;
+    --ring: 160 84% 32%;
+
+    /* Custom Sentinel tokens - Light */
+    --sentinel-glow-primary: 160 84% 32%;
+    --sentinel-glow-destructive: 0 72% 51%;
+    --sentinel-glow-accent: 200 80% 45%;
+    --sentinel-surface: 0 0% 100%;
+    --sentinel-surface-elevated: 220 14% 97%;
+    --sentinel-grid: 220 14% 92%;
+
+    --sidebar-background: 220 14% 96%;
+    --sidebar-foreground: 220 20% 10%;
+    --sidebar-primary: 160 84% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 92%;
+    --sidebar-accent-foreground: 220 20% 20%;
+    --sidebar-border: 220 14% 85%;
+    --sidebar-ring: 160 84% 32%;
+  }
+
+  .dark {
+    --background: 220 20% 6%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 18% 8%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 220 14% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 16% 55%;
+
+    --accent: 200 80% 50%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 98%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 220 20% 6%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 20% 6%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 160 84% 39%;
+
+    /* Custom Sentinel tokens - Dark */
+    --sentinel-glow-primary: 160 84% 39%;
+    --sentinel-glow-destructive: 0 72% 51%;
+    --sentinel-glow-accent: 200 80% 50%;
+    --sentinel-surface: 220 18% 8%;
+    --sentinel-surface-elevated: 220 16% 12%;
+    --sentinel-grid: 220 14% 15%;
+
+    --sidebar-background: 220 18% 7%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 14% 14%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 160 84% 39%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Sentinel Glow Effects */
+  .sentinel-glow-primary {
+    box-shadow: 
+      0 0 20px hsl(var(--sentinel-glow-primary) / 0.15),
+      0 0 40px hsl(var(--sentinel-glow-primary) / 0.1),
+      inset 0 1px 0 hsl(var(--sentinel-glow-primary) / 0.1);
+  }
+
+  .sentinel-glow-destructive {
+    box-shadow: 
+      0 0 20px hsl(var(--sentinel-glow-destructive) / 0.2),
+      0 0 40px hsl(var(--sentinel-glow-destructive) / 0.1),
+      inset 0 1px 0 hsl(var(--sentinel-glow-destructive) / 0.1);
+  }
+
+  .sentinel-glow-accent {
+    box-shadow: 
+      0 0 20px hsl(var(--sentinel-glow-accent) / 0.15),
+      0 0 40px hsl(var(--sentinel-glow-accent) / 0.1);
+  }
+
+  /* Sentinel Card Styles */
+  .sentinel-card {
+    @apply bg-card border border-border rounded-lg;
+    background: linear-gradient(
+      180deg,
+      hsl(var(--sentinel-surface-elevated)) 0%,
+      hsl(var(--sentinel-surface)) 100%
+    );
+  }
+
+  .sentinel-card-elevated {
+    @apply sentinel-card;
+    box-shadow: 
+      0 4px 24px hsl(var(--background) / 0.5),
+      inset 0 1px 0 hsl(var(--foreground) / 0.05);
+  }
+
+  /* Grid Background */
+  .sentinel-grid-bg {
+    background-image: 
+      linear-gradient(hsl(var(--sentinel-grid)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--sentinel-grid)) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Pulse Animation for live indicators */
+  .sentinel-pulse {
+    animation: sentinel-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes sentinel-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  /* Shimmer effect for loading states */
+  .sentinel-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted-foreground) / 0.1) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: sentinel-shimmer 1.5s infinite;
+  }
+
+  @keyframes sentinel-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Scrollbar styling */
+  .sentinel-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .sentinel-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .sentinel-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+
+  .sentinel-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  /* Risk score gradient */
+  .risk-gradient-low {
+    background: linear-gradient(90deg, hsl(var(--success)) 0%, hsl(160 70% 45%) 100%);
+  }
+
+  .risk-gradient-medium {
+    background: linear-gradient(90deg, hsl(var(--warning)) 0%, hsl(45 90% 55%) 100%);
+  }
+
+  .risk-gradient-high {
+    background: linear-gradient(90deg, hsl(var(--destructive)) 0%, hsl(0 80% 60%) 100%);
+  }
+
+  /* Transaction row hover */
+  .transaction-row {
+    @apply transition-all duration-200;
+  }
+
+  .transaction-row:hover {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary) / 0.05) 0%,
+      transparent 100%
+    );
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Number styling for dashboard */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
