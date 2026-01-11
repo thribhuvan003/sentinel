@@ -1,6 +1,7 @@
 {
-  "name": "taskflow-platform",
-  "description": "Real-Time Task Management & Analytics Platform - Production-grade SaaS for enterprise teams",
+  "name": "sentinel-enterprise-suite",
+  "description": "Sentinel Enterprise Suite - A professional React + TypeScript portfolio project",
+  "author": "Thribhuvan <thribhuvan003@gmail.com>",
   "private": true,
   "version": "1.0.0",
   "type": "module",

@@ -51,9 +51,9 @@ export const DashboardHeader = forwardRef<HTMLInputElement, DashboardHeaderProps
                 <Shield className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-lg font-bold text-foreground tracking-tight">SENTINEL</h1>
+                <h1 className="text-lg font-bold text-foreground tracking-tight">TaskFlow</h1>
                 <p className="text-[10px] text-muted-foreground uppercase tracking-widest">
-                  Enterprise Audit Platform
+                  Enterprise Task Platform
                 </p>
               </div>
             </div>
@@ -64,7 +64,7 @@ export const DashboardHeader = forwardRef<HTMLInputElement, DashboardHeaderProps
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input
                   ref={ref}
-                  placeholder="Search transactions, entities, or anomalies..."
+                  placeholder="Search tasks, projects, or team members..."
                   className="pl-10 pr-16 bg-muted/50 border-border focus:border-primary/50 text-sm"
                   onFocus={onSearchFocus}
                 />
