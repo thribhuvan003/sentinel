@@ -76,8 +76,12 @@ export function useKeyboardShortcuts({
   );
 
   useEffect(() => {
+    // Add global event listener for keyboard shortcuts
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      // Cleanup: remove event listener on unmount
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [handleKeyDown]);
 }
 
