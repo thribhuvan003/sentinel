@@ -1,7 +1,8 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "sentinel-enterprise-suite",
+  "description": "Enterprise security and threat monitoring platform built with React, TypeScript, and Supabase",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
