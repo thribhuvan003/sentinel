@@ -3,8 +3,11 @@
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-success)
 ![Built](https://img.shields.io/badge/Built-January%202026-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Site-FF5722?style=for-the-badge&logo=firebase)](https://sentinel-enterprise-taskflow.web.app/)
 
 **Sentinel Enterprise Suite** is a comprehensive, production-grade task management and analytics platform designed for modern enterprise teams. It combines real-time collaboration features with advanced data visualization to streamline workflows and enhance productivity.
+
+> **🚀 Live Enterprise Demo**: [https://sentinel-enterprise-taskflow.web.app](https://sentinel-enterprise-taskflow.web.app)
 
 ## Key Features
 

@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "spliteasy-landing"
+  },
+  "targets": {
+    "spliteasy-landing": {
+      "hosting": {
+        "sentinel": [
+          "sentinel-enterprise-taskflow"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

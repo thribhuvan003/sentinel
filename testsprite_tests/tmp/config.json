@@ -1,0 +1,4 @@
+{
+  "url": "http://localhost:8081",
+  "instructions": "Open http://localhost:8081, login with email ntenalirama@gmail.com and password marshall007. After login, verify that you are on the dashboard and can see the transaction feed. If marshall007 fails, try Marshall007, marshall007@, or Marshall007@."
+}

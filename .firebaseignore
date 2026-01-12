@@ -1,0 +1,31 @@
+# Firebase
+.firebase/
+.firebaserc
+
+# Build outputs
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+testsprite_tests/

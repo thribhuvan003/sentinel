@@ -7,8 +7,7 @@ import { AuditSidebar } from "@/components/dashboard/AuditSidebar";
 import { RiskTrendChart } from "@/components/dashboard/RiskTrendChart";
 import { ComplianceChart } from "@/components/dashboard/ComplianceChart";
 import { Transaction } from "@/components/dashboard/TransactionRow";
-import { mockTransactions } from "@/data/mockTransactions";
-import { DollarSign, AlertTriangle, ShieldCheck, Zap } from "lucide-react";
+import { enterpriseStats, enterpriseTransactions } from "@/data/enterpriseData";
 import { toast } from "sonner";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 
@@ -19,7 +18,7 @@ const Index = () => {
 
   // Get displayed transactions for keyboard navigation
   const displayedTransactions = useMemo(() => {
-    return mockTransactions.slice(0, 15);
+    return enterpriseTransactions.slice(0, 15);
   }, []);
 
   const handleCloseDetail = useCallback(() => {
@@ -99,38 +98,17 @@ const Index = () => {
       <main className="p-6">
         {/* KPI Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <KPICard
-            title="Total Audited Volume"
-            value="$4.2B"
-            icon={DollarSign}
-            variant="primary"
-            subtitle="Last 30 days"
-            trend={{ value: 12.4, isPositive: true }}
-          />
-          <KPICard
-            title="Critical Flags"
-            value="12"
-            icon={AlertTriangle}
-            variant="destructive"
-            subtitle="Requires immediate attention"
-            trend={{ value: 3, isPositive: false }}
-          />
-          <KPICard
-            title="Compliance Health"
-            value="94%"
-            icon={ShieldCheck}
-            variant="primary"
-            subtitle="Across all departments"
-            trend={{ value: 2.1, isPositive: true }}
-          />
-          <KPICard
-            title="Avg. Detection Time"
-            value="420ms"
-            icon={Zap}
-            variant="accent"
-            subtitle="Real-time anomaly detection"
-            trend={{ value: 15, isPositive: true }}
-          />
+          {enterpriseStats.map((stat, index) => (
+            <KPICard
+              key={index}
+              title={stat.title}
+              value={stat.value}
+              icon={stat.icon}
+              variant={stat.variant}
+              subtitle={stat.subtitle}
+              trend={stat.trend}
+            />
+          ))}
         </div>
 
         {/* Main Content Grid */}
@@ -139,7 +117,7 @@ const Index = () => {
           <div className="lg:col-span-8">
             <div className="h-[500px]">
               <TransactionFeed
-                transactions={mockTransactions}
+                transactions={enterpriseTransactions}
                 onTransactionClick={handleTransactionClick}
                 selectedId={selectedTransaction?.id}
                 focusedIndex={focusedIndex}

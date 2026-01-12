@@ -4,6 +4,7 @@
   "author": "Thribhuvan <thribhuvan003@gmail.com>",
   "private": true,
   "version": "1.0.0",
+  "homepage": "https://sentinel-enterprise-taskflow.web.app",
   "type": "module",
   "scripts": {
     "dev": "vite",

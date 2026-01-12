@@ -44,68 +44,73 @@ export const DashboardHeader = forwardRef<HTMLInputElement, DashboardHeaderProps
     return (
       <>
         <header className="h-16 border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-40">
-          <div className="h-full px-6 flex items-center justify-between">
+          <div className="container mx-auto px-4 h-full flex items-center justify-between">
             {/* Logo & Brand */}
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 sentinel-glow-primary">
-                <Shield className="w-6 h-6 text-primary" />
+              <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg bg-primary/10 sentinel-glow-primary flex-shrink-0">
+                <Shield className="w-5 h-5 md:w-6 md:h-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-lg font-bold text-foreground tracking-tight">TaskFlow</h1>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-widest">
+                <h1 className="text-base md:text-lg font-bold text-foreground tracking-tight">TaskFlow</h1>
+                <p className="hidden md:block text-[10px] text-muted-foreground uppercase tracking-widest">
                   Enterprise Task Platform
                 </p>
               </div>
             </div>
 
-            {/* Search */}
-            <div className="flex-1 max-w-md mx-8">
+            {/* Search - Hidden on mobile, visible on tablet+ */}
+            <div className="hidden md:block flex-1 max-w-md mx-4 lg:mx-8">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input
                   ref={ref}
-                  placeholder="Search tasks, projects, or team members..."
+                  placeholder="Search..."
                   className="pl-10 pr-16 bg-muted/50 border-border focus:border-primary/50 text-sm"
                   onFocus={onSearchFocus}
                 />
-                <kbd className="absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 text-[10px] font-mono bg-muted border border-border rounded text-muted-foreground">
+                <kbd className="absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 text-[10px] font-mono bg-muted border border-border rounded text-muted-foreground hidden lg:inline-block">
                   ⌘K
                 </kbd>
               </div>
             </div>
 
             {/* Actions */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1 md:gap-2">
               <NotificationsPanel />
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 size="icon"
                 onClick={handleSettingsClick}
                 aria-label="Settings"
               >
                 <Settings className="w-5 h-5 text-muted-foreground" />
               </Button>
+              {/* Keyboard shortcuts - Desktop only */}
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={handleKeyboardShortcutsClick}
                 aria-label="Keyboard shortcuts"
+                className="hidden md:inline-flex"
               >
                 <Keyboard className="w-5 h-5 text-muted-foreground" />
               </Button>
+
               <ThemeToggle />
-              <div className="w-px h-6 bg-border mx-2" />
+
+              <div className="w-px h-6 bg-border mx-1 md:mx-2" />
+
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    className="gap-2"
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="gap-2 px-1 md:px-3"
                   >
                     <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
                       <User className="w-4 h-4 text-primary" />
                     </div>
-                    <span className="text-sm text-foreground">{displayName}</span>
+                    <span className="hidden md:inline text-sm text-foreground">{displayName}</span>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
